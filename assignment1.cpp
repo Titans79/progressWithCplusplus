@@ -100,7 +100,6 @@ int main() {
     //Collect customer inputs
     cout << "Enter name: " << endl;
     cin >> name;
-    system("cls");
 
     int trials = 0;
 
@@ -111,22 +110,19 @@ int main() {
 
         trials++;
 
-    } while (trials < 3 && !(product == 'X' || product == 'Y' || product == 'Z'));
+    } while (trials < 5 && !(product == 'X' || product == 'Y' || product == 'Z'));
 
     if(!(product == 'X' || product == 'Y' || product == 'Z'))
         system("exit");
     else
-        system("cls");
-    
         cout << "Enter units: " << endl;
         cin >> units;
 
-        system("cls");
-
+    //instantiate a sale
+    Sale sale(name, product, units);
+    
     //give receipt
-    Sale sale1(name, product, units);
-
-    sale1.Receipt();
+    sale.Receipt();
 
     cin.get();
 
